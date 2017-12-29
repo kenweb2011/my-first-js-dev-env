@@ -1,9 +1,20 @@
 {
-  "name": "javascript-development-environment",
-  "version": "1.0.0",
-  "description": "JavaScript development environment Pluralsight course by Cory House",
-  "scripts": {},
-  "author": "Cory House",
+  "name": "my-first-js-dev-env",
+  "version": "0.0.1",
+  "description": "My first js development environment",
+  "scripts": {
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "babel-node buildScripts/srcServer.js",
+    "run:all": "npm-run-all --parallel security-check lint:watch test:watch start",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "security-check": "nsp check",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel start localtunnel",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "K Web",
   "license": "MIT",
   "dependencies": {
     "whatwg-fetch": "1.0.0"
