@@ -4,15 +4,19 @@
   "description": "My first js development environment",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "babel-node buildScripts/srcServer.js",
-    "run:all": "npm-run-all --parallel security-check lint:watch test:watch start",
+    "start-server": "babel-node buildScripts/srcServer.js",
+    "start": "npm-run-all --parallel start-mockapi start-server",
+    "start:all": "npm-run-all --parallel security-check lint:watch test:watch start-mockapi start-server",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel start localtunnel",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "author": "K Web",
   "license": "MIT",

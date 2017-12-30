@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 82331032,
+      "firstName": "Clementina",
+      "lastName": "Bergnaum",
+      "email": "Natalie55@hotmail.com"
+    },
+    {
+      "id": 57510074,
+      "firstName": "Meda",
+      "lastName": "Crist",
+      "email": "Assunta.Runte29@hotmail.com"
+    },
+    {
+      "id": 7428788,
+      "firstName": "Sigmund",
+      "lastName": "Wolff",
+      "email": "Faye_Grady@gmail.com"
+    },
+    {
+      "id": 64328800,
+      "firstName": "Bridgette",
+      "lastName": "McKenzie",
+      "email": "Javon82@gmail.com"
+    }
+  ]
+}
